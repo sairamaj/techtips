@@ -1,2 +1,0 @@
-# techtips
-Technical tips
