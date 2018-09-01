@@ -1,8 +1,13 @@
+import * as yaml from 'read-yaml';
+
 export class TechCategory {
     constructor(public name: string) {
     }
 
     getTips(): Array<string> {
-        return [`${this.name}_tip1`, `${this.name}_tip2`];
+        const file = `${__dirname}/data/${this.name}.yaml`;
+        const tips  = yaml.sync(file, {});
+
+        return tips.map(tip => tip.name);
     }
 }

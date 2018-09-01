@@ -43,6 +43,11 @@ module.exports = {
         context: 'src',
         from: '**/function.json',
         to: ''
+      },
+      {
+        context: 'src',
+        from: 'data/**/*.yaml',
+        to: 'techtips'
       }
     ])
   ],
