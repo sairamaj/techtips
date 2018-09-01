@@ -1,0 +1,19 @@
+/techtips
+	-iis
+	-windbg
+	-debug
+	-vs
+	-git
+
+/techtips/iis
+	- apppool.recycle
+	- apppool.pid
+	- apppool.vdir
+
+/techtips/iis/apppool.recycle
+	- name
+	- description
+	- example
+	- url
+	
+	

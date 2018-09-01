@@ -1,3 +1,4 @@
+import * as fs from 'fs'
 import { Context, HttpMethod, HttpRequest, HttpResponse, HttpStatusCode } from 'azure-functions-ts-essentials';
 
 const OBJECT_NAME = 'someObject';

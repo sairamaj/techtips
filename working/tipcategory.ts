@@ -6,7 +6,7 @@ export class TipCateogry {
   constructor(file: string) {
     this.Tips = yaml.sync(file, {});
   }
-
+  
   public get(name: string): Tip {
     return this.Tips.find(t => t.name === name);
   }
