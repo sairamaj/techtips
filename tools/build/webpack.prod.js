@@ -5,11 +5,11 @@ const copyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   target: 'node',
   entry: {
-    'some-function': $.root('./src/some-function/some-function.ts')
+    'techtips': $.root('./src/techtips/index.ts')
   },
   output: {
     path: $.root('dist'),
-    filename: '[name]/[name].js',
+    filename: '[name]/index.js',
     libraryTarget: 'commonjs2'
   },
   module: {
