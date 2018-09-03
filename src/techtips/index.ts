@@ -1,19 +1,18 @@
 import { TechManager } from './techmanager';
 export function run(context: any, req: any): void {
-  const cat = new TechManager().getCategories();
 
   const category = context.bindingData.category;
-  context.log(`category: ${category}`);
+  const tipFilter = context.bindingData.tip;
+  context.log(`category: ${category} tip: ${tipFilter}`);
   if (category === null) {
-    const response = cat.map(c => {
-      return { name: c };
-    });
     context.res = {
-      body: response
+      body: new TechManager().getCategories().map(c => {
+        return { name: c };
+      })
     };
   } else {
     context.res = {
-      body: new TechManager().getTips(category)
+      body: new TechManager().getTips(category,tipFilter)
     };
   }
 

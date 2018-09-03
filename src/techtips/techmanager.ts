@@ -8,7 +8,12 @@ export class TechManager {
         return fs.readdirSync(dataDir).map(s=> s.split('.')[0])
     }
 
-    getTips(name: string): Array<Tip> {
-        return new TechCategory(name).getTips();
+    getTips(name: string, filter: string): Array<Tip> {
+        const tips = new TechCategory(name).getTips();
+        if( filter === null){
+            return tips
+        }
+        
+        return tips.filter(t=> t.name.startsWith(filter))
     }
 }
