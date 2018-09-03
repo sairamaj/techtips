@@ -12,13 +12,8 @@ export function run(context: any, req: any): void {
       body: response
     };
   } else {
-    const response = new TechManager().getTips(category)
-    .map(tip => {
-      return { name: tip};
-    });
-
     context.res = {
-      body: response
+      body: new TechManager().getTips(category)
     };
   }
 

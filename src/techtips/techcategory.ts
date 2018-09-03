@@ -1,13 +1,12 @@
 import * as yaml from 'read-yaml';
+import { Tip } from './tip';
 
 export class TechCategory {
     constructor(public name: string) {
     }
 
-    getTips(): Array<string> {
+    getTips(): Array<Tip> {
         const file = `${__dirname}/data/${this.name}.yaml`;
-        const tips  = yaml.sync(file, {});
-
-        return tips.map(tip => tip.name);
+        return yaml.sync(file, {});
     }
 }

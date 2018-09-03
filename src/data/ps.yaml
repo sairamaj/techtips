@@ -1,0 +1,4 @@
+- 
+    name: tls.set
+    command: '[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12'
+    description: Sets TLS in powershell.
