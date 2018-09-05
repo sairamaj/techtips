@@ -1,0 +1,11 @@
+- 
+    name: branch.delete.local
+    command: git branch -d <branchname>
+    description: Delete local branch
+
+- 
+    name: branch.delete.remote
+    command:  git push origin --delete <branchname>
+    description: Delete remote branch
+    
+
