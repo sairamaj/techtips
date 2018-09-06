@@ -7,5 +7,10 @@
     name: branch.delete.remote
     command:  git push origin --delete <branchname>
     description: Delete remote branch
-    
+
+- 
+    name: add.modified
+    command:  git add -u
+    description: Adds modified files only.
+
 

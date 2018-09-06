@@ -1,10 +1,9 @@
 - 
-    name: wp.list
-    command: c:\Windows\system32\inetsrv\appcmd list wp
-    description: Lists worker processes
+    name: context.set
+    command: Set-AzureRMContext -Subscription id
+    description: Use Get-AzureRmSubscription to list
+                  Set-AzureRmContext and then
+                Get-AzureRmContext
 
-- 
-    name: wp.list.pid
-    command: c:\Windows\system32\inetsrv\appcmd list wp | find /I "%1"
-    description: Finds specific w3wp for app pool
+
 
