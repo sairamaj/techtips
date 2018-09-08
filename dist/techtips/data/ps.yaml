@@ -1,0 +1,14 @@
+- 
+    name: tls.set
+    command: '[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12'
+    description: Sets TLS in powershell.
+
+- 
+    name: tip.showcommand
+    command : Show-Command CommandName
+    description: 'Shows the parameters in nice GUI (ex: show-command Get-AzureRmResourceGroup )'
+
+-
+    name: doc.startup.commands
+    command: https://www.howtogeek.com/126469/how-to-create-a-powershell-profile/
+    description: Add startup commands whenever you launch default powershell
