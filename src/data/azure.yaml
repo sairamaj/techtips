@@ -4,6 +4,9 @@
     description: Use Get-AzureRmSubscription to list
                   Set-AzureRmContext and then
                 Get-AzureRmContext
-
+-
+    name: doc.function.deployment
+    command: https://github.com/projectkudu/kudu/wiki/Customizing-deployments
+    description: .deployment commands documented here
 
 
