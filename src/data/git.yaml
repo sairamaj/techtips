@@ -2,12 +2,10 @@
     name: branch.delete.local
     command: git branch -d <branchname>
     description: Delete local branch
-
 - 
     name: branch.delete.remote
     command:  git push origin --delete <branchname>
     description: Delete remote branch
-
 - 
     name: branch.rename
     command:  git branch m old new
@@ -18,9 +16,11 @@
     name: add.modified
     command:  git add -u
     description: Adds modified files only
-
 - 
     name: commit.comment.change
     command:  git commit --amend
     description: Changes the last commit comment
-
+-
+    name: remote.show.origin
+    command: git remote show origin
+    description: shows the url of the origin
