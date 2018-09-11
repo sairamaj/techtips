@@ -1,0 +1,4 @@
+- 
+    name: read.entlib
+    command: https://docs.microsoft.com/en-us/previous-versions/msp-n-p/ff648951(v%3dpandp.10)
+    description: Enterprise library patterns.
