@@ -1,0 +1,7 @@
+- 
+    name: first
+    command: >
+                Identity the aspects of your application that vary and separate them from what stays the same.
+                Program to interface , not an implementation
+                Favor composition over inheritance
+            
