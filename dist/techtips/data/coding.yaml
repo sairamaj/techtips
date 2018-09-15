@@ -1,0 +1,3 @@
+- 
+    name: use.errormessage.1
+    description: Use different error messages in exceptions at different places to identify the location
