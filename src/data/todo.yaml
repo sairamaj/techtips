@@ -22,3 +22,15 @@
     name: read.patterns
     command: https://www.u-cursos.cl/usuario/f133dab21b6cbf814b4607124f431358/mi_blog/r/head_first_design_patterns.pdf
     description: Design patterns.
+-
+    name: pattern.static.cling
+    url: https://deviq.com/static-cling/
+-
+    name: pattern.new.glue 
+    url: https://ardalis.com/new-is-glue
+-
+    name: build.aspnet.razor
+    url: https://msdn.microsoft.com/en-us/magazine/mt842512.aspx
+-
+    name: ardalis.blog
+    url: https://ardalis.com/blog
