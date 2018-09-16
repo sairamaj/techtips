@@ -8,5 +8,8 @@
     name: doc.function.deployment
     command: https://github.com/projectkudu/kudu/wiki/Customizing-deployments
     description: .deployment commands documented here
+-
+    name: dashboard.style
+    command: double click on empty area of dashboard
 
 
