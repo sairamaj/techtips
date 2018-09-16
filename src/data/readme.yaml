@@ -34,3 +34,21 @@
 -
     name: ardalis.blog
     url: https://ardalis.com/blog
+-
+    name: services_in_ddd
+    url: http://gorodinski.com/blog/2012/04/14/services-in-domain-driven-design-ddd/
+-
+    name: pattern.command
+    url: https://en.wikipedia.org/wiki/Command_pattern
+-
+    name: pattern.specification
+    url: https://deviq.com/specification-pattern/
+-
+    name: ddd.fundamentals
+    url: http://bit.ly/ddd-fundamentals
+-
+    name: ddd.library
+    url: http://bit.ly/PS-design-patterns
+-
+    name: ddd.plainenglish
+    url: http://bit.ly/2pmVgK2
