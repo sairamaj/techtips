@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 -
   name: templatemethod
   description: Defines the skelton of a algorithm in a method, deferring some steps to subclasses.
@@ -6,6 +7,7 @@
   name: holywood principle
   description: don't call us , we will call you
       
+=======
 - 
     name: fundamentals
     command: >
@@ -65,3 +67,4 @@
                     Objects passed in a parameter to the method.
                     Any object the method creates or instantiates.
                     Any components of the object.
+>>>>>>> 2ebafb697334468ada55c925ab9cb18909bf837e
