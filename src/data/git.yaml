@@ -24,3 +24,8 @@
     name: remote.show.origin
     command: git remote show origin
     description: shows the url of the origin
+-
+    name: remote.add
+    command: git remote add url
+    description: add another url
+    

@@ -70,3 +70,9 @@
 -
     name: rest.api.best.practices
     url: https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api
+-
+    name: restapi.links
+    url: https://stormpath.com/blog/linking-and-resource-expansion-rest-api-tips
+-
+    name: rest.api.design
+    url: https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design

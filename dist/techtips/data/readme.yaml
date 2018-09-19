@@ -55,4 +55,16 @@
 -
     name: developer.requirement
     url: https://medium.freecodecamp.org/a-roadmap-to-becoming-a-web-developer-in-2017-b6ac3dddd0cf
-    
+-
+    name: free.code
+    url: https://www.freecodecamp.org/
+-
+    name: react
+    url: https://egghead.io/lessons/react-conditionally-render-a-react-component
+-
+    name: restapi.links
+    url: https://stormpath.com/blog/linking-and-resource-expansion-rest-api-tips
+-
+    name: rest.api.design
+    url: https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design
+ 
