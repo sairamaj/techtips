@@ -61,4 +61,10 @@
 -
     name: react
     url: https://egghead.io/lessons/react-conditionally-render-a-react-component
-    
+-
+    name: restapi.links
+    url: https://stormpath.com/blog/linking-and-resource-expansion-rest-api-tips
+-
+    name: rest.api.design
+    url: https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design
+ 

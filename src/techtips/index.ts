@@ -6,13 +6,17 @@ export function run(context: any, req: any): void {
   context.log(`category: ${category} tip: ${tipFilter}`);
   if (category === null) {
     context.res = {
-      body: new TechManager().getCategories().map(c => {
-        return { name: c };
+      body: new TechManager().getCategories()
+      .map(c => {
+        return {
+          name: c,
+          href: `${context.req.originalUrl}/${c}`
+        };
       })
     };
   } else {
     context.res = {
-      body: new TechManager().getTips(category,tipFilter)
+      body: new TechManager().getTips(category, tipFilter)
     };
   }
 
