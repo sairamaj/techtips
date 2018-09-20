@@ -12,9 +12,8 @@ export class TechManager {
 
     getTips(name: string, filter: string): Array<Tip> {
         const tips = new TechCategory(name).getTips();
-        if (filter === null || filter === undefined) {
+        if (filter === null || filter === undefined)
             return tips;
-        }
 
         return tips.filter(t => t.name.startsWith(filter));
     }

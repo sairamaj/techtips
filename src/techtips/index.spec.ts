@@ -53,13 +53,13 @@ describe('@azure-seed/azure-functions-typescript', () => {
                     .toBeDefined();
                 expect(categories.length)
                     .toBe(expectedCategories);
-                console.log('categoris:' + categories);
                 categories.forEach(category => {
-                    console.log('testing:' + category.name);
                     testFunc(tips => {
                         expect(tips)
                             .toBeDefined();
-                    }, category.name)});
+                        // expect(tips.length)
+                        //     .toBeGreaterThanOrEqual(1);
+                    }, category.name); });
 
         }, undefined);
         });
