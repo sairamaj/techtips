@@ -4,6 +4,7 @@
                  context in which pattern applies.
                  problem is the goal trying to achieve
                  soltion is what you are after.
+-
   name: templatemethod
   description: Defines the skelton of a algorithm in a method, deferring some steps to subclasses.
                Template method let redifne certain steps of an algorithm without changing the algorithm structure

@@ -1,6 +1,10 @@
+param(
+   [parameter(mandatory=$true)]
+   $Password
+)
 $website = 'saitools'
-$username = '$saitools'
-$password = 'pwdhere'
+$username = 'sairamaj'
+$password = $Password
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username,$password)))
 $apiBaseUrl = "https://$website.scm.azurewebsites.net/api"
 $deployments = Invoke-RestMethod -Uri "$apiBaseUrl/deployments" -Headers @{Authorization=("Basic {0}" -f $base64AuthInfo)} -Method GET 
