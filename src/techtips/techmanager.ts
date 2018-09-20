@@ -1,13 +1,21 @@
 import * as fs from 'fs';
 import { TechCategory } from './techcategory';
 import { Tip } from './tip';
+import { TipCategory } from './tipCategory';
 
 export class TechManager {
-    getCategories(): Array<string> {
+    getCategories(): Array<TipCategory> {
         const dataDir = `${__dirname}/data`;
 
         return fs.readdirSync(dataDir)
-            .map(s => s.split('.')[0]);
+            .map(s => {
+                const parts = s.split('.');
+                let type = 'command';
+                if (parts.length > 2) {
+                    type = parts[1];
+                }
+                return new TipCategory(parts[0], type);
+            });
     }
 
     getTips(name: string, filter: string): Array<Tip> {

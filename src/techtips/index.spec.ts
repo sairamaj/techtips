@@ -30,7 +30,7 @@ const testFunc = function(verify, category){
     run(mockContext, mockRequest);
 };
 
-describe('@azure-seed/azure-functions-typescript', () => {
+describe('tech tips', () => {
     describe('GET /api/techtips', () => {
         it('should be able to get categories', () => {
             testFunc(response => {
@@ -41,6 +41,24 @@ describe('@azure-seed/azure-functions-typescript', () => {
                     .toBeDefined();
                 expect(response.length)
                     .toBe(expectedCategories);
+        }, undefined);
+        });
+
+        it('should be able to get categories with associated type.', () => {
+            testFunc(response => {
+
+                const dataDir = `${__dirname}/data`;
+                const expectedCategories = fs.readdirSync(dataDir).length;
+                expect(response)
+                    .toBeDefined();
+                expect(response.length)
+                    .toBe(expectedCategories);
+                response.forEach(cat => {
+                    expect(cat.type)
+                        .toBeDefined();
+                    expect(['command', 'info'])
+                        .toContain(cat.type);
+                });
         }, undefined);
         });
 

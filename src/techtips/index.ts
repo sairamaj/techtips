@@ -9,8 +9,9 @@ export function run(context: any, req: any): void {
       body: new TechManager().getCategories()
       .map(c => {
         return {
-          name: c,
-          href: `${context.req.originalUrl}/${c}`
+          name: c.name,
+          type: c.type,
+          href: `${context.req.originalUrl}/${c.name}`
         };
       })
     };
