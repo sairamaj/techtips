@@ -68,7 +68,8 @@
     ],
     "testResultsProcessor": "./node_modules/jest-junit-reporter",
     "cache": false,
-    "silent": true
+    "silent": true,
+    "testURL": "http://localhost"
   },
   "greenkeeper": {
     "ignore": [

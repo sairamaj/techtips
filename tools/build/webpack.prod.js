@@ -46,8 +46,8 @@ module.exports = {
       },
       {
         context: 'src',
-        from: 'data/**/*.yaml',
-        to: 'techtips'
+        from: 'techtips/data/**/*.yaml',
+        to: ''
       }
     ])
   ],
