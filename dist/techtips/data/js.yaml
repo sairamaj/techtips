@@ -1,0 +1,6 @@
+-
+  name: array.some
+  command: data.some(d=> <condition>)
+  description: If any condition matches return true.
+  
+  

@@ -16,12 +16,10 @@
     
 - 
     name: read.entlib
-    command: https://docs.microsoft.com/en-us/previous-versions/msp-n-p/ff648951(v%3dpandp.10)
-    description: Enterprise library patterns.
+    url: https://docs.microsoft.com/en-us/previous-versions/msp-n-p/ff648951(v%3dpandp.10)
 -
     name: read.patterns
-    command: https://www.u-cursos.cl/usuario/f133dab21b6cbf814b4607124f431358/mi_blog/r/head_first_design_patterns.pdf
-    description: Design patterns.
+    url: https://www.u-cursos.cl/usuario/f133dab21b6cbf814b4607124f431358/mi_blog/r/head_first_design_patterns.pdf
 -
     name: pattern.static.cling
     url: https://deviq.com/static-cling/
