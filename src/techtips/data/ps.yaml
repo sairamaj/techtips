@@ -2,6 +2,10 @@
     name: tls.set
     command: '[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12'
     description: Sets TLS in powershell.
+-
+    name: ssl.ignore
+    command: '[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}'
+    description: Ignores the certificate warning and let you proceed.
 - 
     name: tip.showcommand
     command : Show-Command CommandName

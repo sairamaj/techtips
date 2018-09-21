@@ -17,7 +17,8 @@ const testFunc = function(verify, category){
         },
 
         req : {
-            originalUrl : 'localhost'
+            originalUrl : 'localhost',
+            query :{}
         }
     };
 
