@@ -4,14 +4,14 @@ export function run(context: any, req: any): void {
 
   const category = context.bindingData.category;
   const tipFilter = context.bindingData.tip;
-  const search = context.req.query
+  const search = context.req.query;
   context.log(`category: ${category} tip: ${tipFilter}`);
 
-  if (category === null || category === undefined) {
-  
+  if (category === null || category === undefined){
+
     if (search.q !== undefined) {
       // search
-      context.log('search in progress.' + search.q)
+      context.log(`search in progress ${search.q}`);
       context.res = {
         body: TipSearch.search(search.q)
       }

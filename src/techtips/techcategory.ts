@@ -10,15 +10,19 @@ export class TechCategory {
 
     getTips(): Array<Tip> {
         const file = `${__dirname}/data/${this.name}.yaml`;
-        if (fs.existsSync(file))
-            return yaml.sync(file, {});
-
         let tips = new Array<Tip>();
+        if (fs.existsSync(file)){
+            tips = yaml.sync(file, {});
+        } 
 
         this.suportedTypes.forEach(type => {
             const file1 = `${__dirname}/data/${this.name}.${type}.yaml`;
             if (fs.existsSync(file1))
                 tips = yaml.sync(file1, {});
+        });
+
+        tips.forEach(t => {
+            t.category = this.name;
         });
 
         return tips;
