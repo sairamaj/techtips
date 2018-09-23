@@ -74,3 +74,18 @@
 -
     name: rest.api.design
     url: https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design
+-
+    name: read.emmanuel.git
+    url: https://github.com/ohansemmanuel?tab=repositories
+-
+    name: redux
+    url: https://medium.freecodecamp.org/understanding-redux-the-worlds-easiest-guide-to-beginning-redux-c695f45546f6
+-
+    name: redux.store.data
+    url: https://www.youtube.com/watch?v=aJxcVidE0I0&feature=youtu.be
+-
+    name: flex.css
+    url: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+-
+    name: redux.workshops
+    url: https://blog.isquaredsoftware.com/presentations/workshops/redux-fundamentals/ui-layer.html#/1
