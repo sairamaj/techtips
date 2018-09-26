@@ -28,4 +28,7 @@
     name: remote.add
     command: git remote add url
     description: add another url
-    
+-
+    name: remove.files
+    command: git clean -xdf
+    description: cleans all changes (beware)

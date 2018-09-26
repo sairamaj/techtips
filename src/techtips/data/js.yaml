@@ -2,5 +2,8 @@
   name: array.some
   command: data.some(d=> <condition>)
   description: If any condition matches return true.
-  
-  
+-
+  name: import.curly.brace.default
+  command: import A from './A'
+  description: without curly braces it is default. with curly braces it is specific import.
+  url: https://stackoverflow.com/questions/36795819/when-should-i-use-curly-braces-for-es6-import/36796281
