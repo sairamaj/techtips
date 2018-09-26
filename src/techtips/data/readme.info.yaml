@@ -89,3 +89,19 @@
 -
     name: redux.workshops
     url: https://blog.isquaredsoftware.com/presentations/workshops/redux-fundamentals/ui-layer.html#/1
+-
+    name: azure.vm.create
+    url: https://github.com/mikepfeiffer/azure-rm-vm
+-
+    name: azure.quickstart.templates
+    url: https://github.com/Azure/azure-quickstart-templates
+-
+    name: azure.vm.resourcetemplate.deploy
+    url: https://github.com/mikepfeiffer/iis-webdeploy
+-
+    name: what.is.myip
+    url: http://www.whatsmyip.org
+-
+    name: azure.resource.graph
+    url: https://docs.microsoft.com/en-us/azure/governance/resource-graph/samples/starter
+
