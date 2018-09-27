@@ -26,9 +26,14 @@
     description: shows the url of the origin
 -
     name: remote.add
-    command: git remote add url
+    command: git remote add url `
+             git remote set-url origin url
     description: add another url
 -
     name: remove.files
     command: git clean -xdf
     description: cleans all changes (beware)
+-
+    name: remote.show
+    command: git remote -v
+    description: shows the urls of remote
