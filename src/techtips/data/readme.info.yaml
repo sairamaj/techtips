@@ -75,6 +75,12 @@
     name: rest.api.design
     url: https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design
 -
+    name: data.at.rest
+    url:  http://www.alertboot.com/blog/blogs/endpoint_security/archive/2009/03/13/what-is-data-at-rest-encryption.aspx
+-
+    name: react-redux
+    url: https://www.sohamkamani.com/blog/2017/03/31/react-redux-connect-explained/
+-
     name: read.emmanuel.git
     url: https://github.com/ohansemmanuel?tab=repositories
 -
@@ -89,3 +95,4 @@
 -
     name: redux.workshops
     url: https://blog.isquaredsoftware.com/presentations/workshops/redux-fundamentals/ui-layer.html#/1
+
