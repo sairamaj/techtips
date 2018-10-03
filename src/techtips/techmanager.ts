@@ -6,7 +6,7 @@ import { TipCategory } from './tipCategory';
 export class TechManager {
     getCategories(): Array<TipCategory> {
         const dataDir = `${__dirname}/data`;
-
+        
         return fs.readdirSync(dataDir)
             .map(s => {
                 const parts = s.split('.');

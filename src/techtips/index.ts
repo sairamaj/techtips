@@ -1,13 +1,22 @@
 import { TechManager } from './techmanager';
 import { TipSearch } from './tipsearch';
+import { _ } from 'underscore';
+
 export function run(context: any, req: any): void {
 
-  const category = context.bindingData.category;
+  function getCategory(context){
+    const category = context.bindingData.category;
+    if(category === null || category === undefined || _.isEmpty(category) ){
+      return undefined;
+    }
+    return category;
+  }
+  const category = getCategory(context);
   const tipFilter = context.bindingData.tip;
   const search = context.req.query;
   context.log(`category: ${category} tip: ${tipFilter}`);
 
-  if (category === null || category === undefined){
+  if (category === undefined){
 
     if (search.q !== undefined) {
       // search
