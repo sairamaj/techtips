@@ -4,21 +4,21 @@ import { _ } from 'underscore';
 
 export function run(context: any, req: any): void {
 
-  function getCategory(context){
-    const category = context.bindingData.category;
-    if(category === null || category === undefined || _.isEmpty(category) ){
+  function normalize(val){
+    
+    if(val === null || val === undefined || _.isEmpty(val) ){
       return undefined;
     }
-    return category;
+    return val;
   }
-  const category = getCategory(context);
-  const tipFilter = context.bindingData.tip;
-  const search = context.req.query;
-  context.log(`category: ${category} tip: ${tipFilter}`);
+  const category = normalize(context.bindingData.category);
+  const tipFilter = normalize(context.bindingData.tip);
+  const search = normalize(context.req.query);
+  context.log(`category: ${category} tip: ${tipFilter} search:${search}`);
 
   if (category === undefined){
 
-    if (search.q !== undefined) {
+    if (search != undefined && search.q !== undefined) {
       // search
       context.log(`search in progress ${search.q}`);
       context.res = {
