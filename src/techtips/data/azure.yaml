@@ -24,3 +24,7 @@
 -
     name: dashboard.add.subscriptions
     url: http://spartansoft.net/add-usage-azure-subscriptions-portal-dashboard/
+-
+    name: func.local.install
+    url: https://github.com/Azure/azure-functions-core-tools
+    

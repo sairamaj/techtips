@@ -1,3 +1,3 @@
 call npm run-script build
-cd dist
-func host start
+rem cd dist
+rem func host start

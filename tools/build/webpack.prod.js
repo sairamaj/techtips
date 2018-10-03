@@ -5,7 +5,8 @@ const copyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   target: 'node',
   entry: {
-    'techtips': $.root('./src/techtips/index.ts')
+    'techtips': $.root('./src/techtips/index.ts'),
+    'techtasks': $.root('./src/techtasks/index.ts')
   },
   output: {
     path: $.root('dist'),
