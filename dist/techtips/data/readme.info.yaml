@@ -95,4 +95,10 @@
 -
     name: redux.workshops
     url: https://blog.isquaredsoftware.com/presentations/workshops/redux-fundamentals/ui-layer.html#/1
-
+-
+    name: microsoft.learning.azure
+    url: https://docs.microsoft.com/en-us/learn/azure/
+-
+    name: microsoft.architecture
+    url: https://docs.microsoft.com/en-us/azure/architecture/
+    

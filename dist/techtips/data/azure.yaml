@@ -14,4 +14,13 @@
 -
     name: kudu.logstream
     command: curl -v -u user:pwd https://<site>.scm.azurewebsites.net/api/logstream
-
+-
+    name: kudu.deployments
+    command: curl -v -u user:pwd https://<site>.scm.azurewebsites.net/deployments   
+-
+    name: appservice.node.version
+    command: set WEBSITE_NODE_DEFAULT_VERSION to version number `
+             WEBSITE_NODE_DEFAULT_VERSION=8.9.3
+-
+    name: dashboard.add.subscriptions
+    url: http://spartansoft.net/add-usage-azure-subscriptions-portal-dashboard/
