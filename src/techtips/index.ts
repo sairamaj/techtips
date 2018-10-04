@@ -3,16 +3,10 @@ import { TipSearch } from "./tipsearch";
 import { _ } from "underscore";
 
 export function run(context: any, req: any): void {
-  function normalize(val) {
-    if (val === null || val === undefined || _.isEmpty(val)) {
-      return undefined;
-    }
-    return val;
-  }
-  context.log('binding data:' + JSON.stringify(context.bindingData))
-  const category = normalize(context.bindingData.category);
-  const tipFilter = normalize(context.bindingData.tip);
-  const search = normalize(context.req.query);
+  const category = req.params.category;
+  const tipFilter = req.params.tip;
+  const search = req.query;
+  context.log('techtips: request:' + JSON.stringify(req))
   context.log(`category: ${category} tip: ${tipFilter} search:${search}`);
 
   if (category === undefined) {
