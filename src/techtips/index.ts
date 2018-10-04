@@ -9,6 +9,7 @@ export function run(context: any, req: any): void {
     }
     return val;
   }
+  context.log('binding data:' + JSON.stringify(context.bindingData))
   const category = normalize(context.bindingData.category);
   const tipFilter = normalize(context.bindingData.tip);
   const search = normalize(context.req.query);
