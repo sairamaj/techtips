@@ -8,6 +8,7 @@ export function run(context: any, req: any): void {
     }
     return val;
   }
+  context.log('binding data:' + JSON.stringify(context.bindingData))
   const id = normalize(context.bindingData.id);
   context.log(`techtasks id:${id}`)
   if (id === undefined) {
