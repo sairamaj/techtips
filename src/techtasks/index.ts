@@ -1,8 +1,26 @@
-export function run(context: any, req: any): void {
+import { TaskManager } from "./taskmanager";
+import { _ } from "underscore";
 
-  context.res = {
-    body: {
-      msg: "hello"
+export function run(context: any, req: any): void {
+  function normalize(val) {
+    if (val === null || val === undefined || _.isEmpty(val)) {
+      return undefined;
+    }
+    return val;
+  }
+  const id = normalize(context.bindingData.id);
+  if (id === undefined) {
+    context.res = {
+      body: new TaskManager().getTasks().map(task => {
+        return {
+          ...task,
+          href: `${context.req.originalUrl}/${task.id}`
+        };
+      })
+    };
+  }else{
+    context.res = {
+      body: new TaskManager().getTaskDetail(id)
     }
   }
 
