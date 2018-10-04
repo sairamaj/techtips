@@ -9,6 +9,7 @@ export function run(context: any, req: any): void {
     return val;
   }
   const id = normalize(context.bindingData.id);
+  context.log(`techtasks id:${id}`)
   if (id === undefined) {
     context.res = {
       body: new TaskManager().getTasks().map(task => {
@@ -20,7 +21,7 @@ export function run(context: any, req: any): void {
     };
   }else{
     context.res = {
-      body: new TaskManager().getTaskDetail(id)
+      body: new TaskManager().getTaskDetail(+id)
     }
   }
 
