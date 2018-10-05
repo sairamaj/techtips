@@ -4,7 +4,7 @@ const Base64 = require('js-base64').Base64;
 
 export class TaskManager {
 
-    accessToken: string = "54e2b5e9a0505ee0b0d62b7228e0293993511432";
+    accessToken: string = "d70585d17c12eeaf52774808d1b03c79f78ba942";
     getAuthHeader(): any {
         return {
             authorization: `Bearer ${this.accessToken}`
