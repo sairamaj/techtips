@@ -15,6 +15,12 @@
     name: kudu.logstream
     command: curl -v -u user:pwd https://<site>.scm.azurewebsites.net/api/logstream
 -
+    name: vm.automate
+    url: https://buildazure.com/2018/04/17/using-chocolatey-with-azure-vms/
+-
+    name: fuctionapp.portal.readonly
+    description: Source control is hooked up and hence cannot be edited in portal
+-
     name: kudu.deployments
     command: curl -v -u user:pwd https://<site>.scm.azurewebsites.net/deployments   
 -
@@ -30,3 +36,4 @@
 -
     name: func.csharp.run.commandline
     command: run from output directory with func host start
+    
