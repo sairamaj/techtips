@@ -26,9 +26,27 @@
     description: shows the url of the origin
 -
     name: remote.add
-    command: git remote add url
+    command: git remote add url `
+             git remote set-url origin url
     description: add another url
 -
     name: remove.files
     command: git clean -xdf
     description: cleans all changes (beware)
+-
+    name: remote.show
+    command: git remote -v
+    description: shows the urls of remote
+-
+    name: setup.mergetool.as.vscode
+    command: git config --global merge.tool vscode `
+            git config --global mergetool.vscode.cmd "code --wait $MERGED"
+    description: set up merging tool
+-
+    name: setup.difftool.as.vscode
+    command: git config --global diff.tool vscode `
+             git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+-
+    name: remove.orig.files
+    command: git clean -f
+    description: removes the .orig files if you are sure merge is done.

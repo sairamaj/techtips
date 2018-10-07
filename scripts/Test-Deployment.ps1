@@ -2,7 +2,7 @@ param(
    [parameter(mandatory=$true)]
    $Password
 )
-$website = 'saitools'
+$website = 'saitech'
 $username = 'sairamaj'
 $password = $Password
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username,$password)))

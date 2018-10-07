@@ -13,12 +13,13 @@ const testFunc = function(verify, category){
         bindingData: {
         },
 
-        log () {
-        },
+        // log: () {
+        //  },
 
         req : {
             originalUrl : 'localhost',
-            query :{}
+            query :{},
+            method: HttpMethod.Get
         }
     };
 
