@@ -27,4 +27,6 @@
 -
     name: func.local.install
     url: https://github.com/Azure/azure-functions-core-tools
-    
+-
+    name: func.csharp.run.commandline
+    command: run from output directory with func host start

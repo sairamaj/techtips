@@ -33,7 +33,7 @@ export class TaskManager {
       repo: "techtips",
       path: path
     });
-    return info.data.map(p => p.name);
+    return info.data.map(p => p.name).filter(name=> name.endsWith(".MD"));
   }
 
   async getTasks(): Promise<Array<Task>> {
