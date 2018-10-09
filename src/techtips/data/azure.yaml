@@ -36,4 +36,7 @@
 -
     name: func.csharp.run.commandline
     command: run from output directory with func host start
+-
+    name: deploy.travis
+    url: https://docs.travis-ci.com/user/deployment/azure-web-apps/
     
