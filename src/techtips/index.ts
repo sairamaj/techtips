@@ -3,6 +3,8 @@ import { TipSearch } from "./tipsearch";
 import { _ } from "underscore";
 
 export function run(context: any, req: any): void {
+  console.log('context:' + JSON.stringify(context))
+  console.log('req:' + JSON.stringify(req))
   const category = req.params.category;
   const tipFilter = req.params.tip;
   const search = req.query;
