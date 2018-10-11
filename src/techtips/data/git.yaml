@@ -50,3 +50,7 @@
     name: remove.orig.files
     command: git clean -f
     description: removes the .orig files if you are sure merge is done.
+-
+    name: list.remote
+    command: git branch -r
+    description: Lists remote branches
