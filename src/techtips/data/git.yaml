@@ -54,3 +54,7 @@
     name: list.remote
     command: git branch -r
     description: Lists remote branches
+-
+    name: cherrypick
+    command: git cherry-pick <commitid>
+    description: used for merging a particular commit
