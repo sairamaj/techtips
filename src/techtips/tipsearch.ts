@@ -21,10 +21,10 @@ export class TipSearch{
     }
 
     static index(){
-        new TechManager().getCategories().forEach(category=>{
-            new TechManager().getTips(category.name, undefined).forEach(tip =>{
-                TipSearch.engine.add(tip);
-            })
-        })
+        // new TechManager("").getCategories().forEach(category=>{
+        //     new TechManager("").getTips(category.name, undefined).forEach(tip =>{
+        //         TipSearch.engine.add(tip);
+        //     })
+        // })
     }
 }
