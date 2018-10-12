@@ -1,13 +1,16 @@
-import * as fs from 'fs';
 import { TechCategory } from './techcategory';
 import { Tip } from './tip';
 import { TipCategory } from './tipCategory';
+import { GitProxy } from './gitProxy';
 
 export class TechManager {
-    getCategories(): Array<TipCategory> {
-        const dataDir = `${__dirname}/data`;
+
+    constructor(public accessToken: string) {}
+
+    async getCategories(): Promise<Array<TipCategory>> {
+        var yamlFiles = await new GitProxy(this.accessToken).getRepoFiles("src/techtips/data");
         
-        return fs.readdirSync(dataDir)
+        return yamlFiles
             .map(s => {
                 const parts = s.split('.');
                 let type = 'command';
@@ -18,8 +21,8 @@ export class TechManager {
             });
     }
 
-    getTips(name: string, filter: string): Array<Tip> {
-        const tips = new TechCategory(name).getTips();
+    async getTips(name: string, filter: string): Promise<Array<Tip>> {
+        const tips = await new TechCategory(this.accessToken, name).getTips();
         if (filter === null || filter === undefined)
             return tips;
 

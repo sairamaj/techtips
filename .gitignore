@@ -3,6 +3,8 @@
 # compiled output
 src/dist/
 
+dist/
+
 # dependencies
 node_modules/
 

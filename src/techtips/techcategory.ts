@@ -1,30 +1,31 @@
-import * as fs from 'fs';
-import * as yaml from 'read-yaml';
-import { Tip } from './tip';
+import { Tip } from "./tip";
+import { GitProxy } from "./gitProxy";
+const YAML = require("yamljs");
 
 export class TechCategory {
-    suportedTypes = ['info', 'command'];
+  suportedTypes = ["info", "command"];
 
-    constructor(public name: string) {
+  constructor(public accessToken: string, public name: string) { }
+
+  async getTips(): Promise<Array<Tip>> {
+    let tips = []
+    var response = await new GitProxy(this.accessToken).getRepoFileContent(`src/techtips/data/${this.name}.yaml`);
+    if (response.data !== undefined) {
+      tips = YAML.parse(response.data);
     }
 
-    getTips(): Array<Tip> {
-        const file = `${__dirname}/data/${this.name}.yaml`;
-        let tips = new Array<Tip>();
-        if (fs.existsSync(file)){
-            tips = yaml.sync(file, {});
-        } 
-
-        this.suportedTypes.forEach(type => {
-            const file1 = `${__dirname}/data/${this.name}.${type}.yaml`;
-            if (fs.existsSync(file1))
-                tips = yaml.sync(file1, {});
-        });
-
-        tips.forEach(t => {
-            t.category = this.name;
-        });
-
-        return tips;
+    for(var type of this.suportedTypes){
+      console.log(`src/techtips/data/${this.name}.${type}.yaml`)
+      var response = await  new GitProxy(this.accessToken).getRepoFileContent(`src/techtips/data/${this.name}.${type}.yaml`);
+      if (response.data !== undefined) {
+        tips = YAML.parse(response.data)
+      }
     }
+
+    tips.forEach(t => {
+      t.category = this.name;
+    });
+
+    return tips;
+  }
 }
