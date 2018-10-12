@@ -9,14 +9,13 @@ export class TechCategory {
 
   async getTips(): Promise<Array<Tip>> {
     let tips = []
-    var response = await new GitProxy(this.accessToken).getRepoFileContent(`data/techtips/${this.name}.yaml`);
+    var response = await new GitProxy(this.accessToken).getRepoFileContent(`techtips/${this.name}.yaml`);
     if (response.data !== undefined) {
       tips = YAML.parse(response.data);
     }
 
     for(var type of this.suportedTypes){
-      console.log(`src/techtips/data/${this.name}.${type}.yaml`)
-      var response = await  new GitProxy(this.accessToken).getRepoFileContent(`data/techtips/${this.name}.${type}.yaml`);
+      var response = await  new GitProxy(this.accessToken).getRepoFileContent(`techtips/${this.name}.${type}.yaml`);
       if (response.data !== undefined) {
         tips = YAML.parse(response.data)
       }

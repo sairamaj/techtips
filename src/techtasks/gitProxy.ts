@@ -22,7 +22,7 @@ export class GitProxy {
           repo: "techdata",
           path: path
         });
-        return info.data.map(p => p.name).filter(name=> name.endsWith(".MD"));
+        return info.data.map(p => p.name).filter(name=> name.endsWith(".yaml"));
       }
 
       async getRepoFileContent(file): Promise<any> {
