@@ -8,7 +8,7 @@ export class TechManager {
     constructor(public accessToken: string) {}
 
     async getCategories(): Promise<Array<TipCategory>> {
-        var yamlFiles = await new GitProxy(this.accessToken).getRepoFiles("src/techtips/data");
+        var yamlFiles = await new GitProxy(this.accessToken).getRepoFiles("data/techtips");
         
         return yamlFiles
             .map(s => {
