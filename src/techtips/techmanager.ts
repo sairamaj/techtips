@@ -3,6 +3,7 @@ import { TechCategory } from './techcategory';
 import { Tip } from './tip';
 import { TipCategory } from './tipCategory';
 const octokit = require("@octokit/rest")();
+const Base64 = require("js-base64").Base64;
 
 export class TechManager {
 
@@ -28,6 +29,15 @@ export class TechManager {
         return info.data.map(p => p.name).filter(name=> name.endsWith(".yaml"));
       }
 
+      async getRepoFileContent(file): Promise<string> {
+        var response = await octokit.repos.getContent({
+          headers: this.getAuthHeader(),
+          owner: "sairamaj",
+          repo: "techtips",
+          path: file
+        });
+        return Base64.decode(response.data.content);
+      }
     async getCategories(): Promise<Array<TipCategory>> {
         var yamlFiles = await this.getRepoFiles("src/techtips/data");
         
@@ -42,8 +52,8 @@ export class TechManager {
             });
     }
 
-    getTips(name: string, filter: string): Array<Tip> {
-        const tips = new TechCategory(name).getTips();
+    async getTips(name: string, filter: string): Promise<Array<Tip>> {
+        const tips = await new TechCategory(this.accessToken, name).getTips();
         if (filter === null || filter === undefined)
             return tips;
 
