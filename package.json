@@ -38,7 +38,6 @@
     "full-text-search-light": "0.0.17",
     "gulp-typescript": "^5.0.0-alpha.3",
     "js-base64": "2.4.9",
-    "read-yaml": "^1.1.0",
     "underscore": "1.9.1",
     "yamljs": "^0.3.0"
   },

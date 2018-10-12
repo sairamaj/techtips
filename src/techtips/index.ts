@@ -45,14 +45,14 @@ export function run(context: any, req: any): void {
     }
   } else {
     // getting tips for categories.
-    new TechManager(githubApiAccessToken).getTips(category, tipFilter).then(tips=>{
+    new TechManager(githubApiAccessToken).getTips(category, tipFilter).then(tips => {
       context.res = {
         body: tips
       };
       context.done();
-    }).catch(err=>{
+    }).catch(err => {
       context.res = {
-        body: {error : "erro here"}
+        body: { error: err }
       };
       context.done();
     })
