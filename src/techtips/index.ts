@@ -16,9 +16,19 @@ export function run(context: any, req: any): void {
     if (search != undefined && search.q !== undefined) {
       // search
       context.log(`search in progress ${search.q}`);
-      context.res = {
-        body: TipSearch.search(search.q)
-      };
+      TipSearch.search(search.q)
+        .then(results => {
+          context.res = {
+            body: results
+          };
+          context.done();
+        })
+        .catch(err => {
+          context.res = {
+            body: err
+          };
+          context.done();
+        });
     } else {
       // getting categories.
 
@@ -39,22 +49,25 @@ export function run(context: any, req: any): void {
         .catch(err => {
           context.res = {
             body: err
-          }
+          };
           context.done();
         });
     }
   } else {
     // getting tips for categories.
-    new TechManager(githubApiAccessToken).getTips(category, tipFilter).then(tips => {
-      context.res = {
-        body: tips
-      };
-      context.done();
-    }).catch(err => {
-      context.res = {
-        body: { error: err }
-      };
-      context.done();
-    })
+    new TechManager(githubApiAccessToken)
+      .getTips(category, tipFilter)
+      .then(tips => {
+        context.res = {
+          body: tips
+        };
+        context.done();
+      })
+      .catch(err => {
+        context.res = {
+          body: { error: err }
+        };
+        context.done();
+      });
   }
 }

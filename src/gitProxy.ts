@@ -15,14 +15,14 @@ export class GitProxy {
         };
       }
     
-      async getRepoFiles(path): Promise<Array<string>> {
+      async getRepoFiles(repo,path,ext): Promise<Array<string>> {
         var info = await octokit.repos.getContent({
           headers: this.getAuthHeader(),
           owner: "sairamaj",
-          repo: "techdata",
+          repo: repo,
           path: path
         });
-        return info.data.map(p => p.name).filter(name=> name.endsWith(".MD"));
+        return info.data.map(p => p.name).filter(name=> name.endsWith(ext));
       }
 
       async getRepoFileContent(file): Promise<any> {

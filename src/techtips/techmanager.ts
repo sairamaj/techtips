@@ -1,14 +1,15 @@
 import { TechCategory } from './techcategory';
 import { Tip } from './tip';
 import { TipCategory } from './tipCategory';
-import { GitProxy } from './gitProxy';
+import { GitProxy } from '../gitProxy';
 
 export class TechManager {
 
     constructor(public accessToken: string) {}
 
     async getCategories(): Promise<Array<TipCategory>> {
-        var yamlFiles = await new GitProxy(this.accessToken).getRepoFiles("techtips");
+        var yamlFiles = await new GitProxy(this.accessToken)
+                        .getRepoFiles('techdata','techtips','yaml');
         
         return yamlFiles
             .map(s => {

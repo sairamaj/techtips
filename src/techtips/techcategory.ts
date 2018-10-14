@@ -1,5 +1,5 @@
 import { Tip } from "./tip";
-import { GitProxy } from "./gitProxy";
+import { GitProxy } from "../gitProxy";
 const YAML = require("yamljs");
 
 export class TechCategory {
