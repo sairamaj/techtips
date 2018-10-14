@@ -11,7 +11,9 @@ export class TipSearch{
       });
 
     static async search(value) : Promise<Array<Tip>>{
-        throw "Search temporarily suspended."
+        throw {
+            error: "Search temporarily suspended."
+        }
         // if(!TipSearch.isIndexed){
         //     console.log('indexing...')
         //     TipSearch.index();
