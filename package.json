@@ -39,7 +39,9 @@
     "gulp-typescript": "^5.0.0-alpha.3",
     "js-base64": "2.4.9",
     "underscore": "1.9.1",
-    "yamljs": "^0.3.0"
+    "yamljs": "^0.3.0",
+    "redis": "2.8.0",
+    "bluebird": "3.5.2"
   },
   "devDependencies": {
     "@types/jest": "~22.2.3",

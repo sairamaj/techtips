@@ -1,4 +1,7 @@
 const $ = require('./helpers');
+const path = require('path')
+
+
 const uglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -24,6 +27,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.js', '.json'],
+    alias: {
+      'hiredis': path.resolve(__dirname, './aliases/hiredis.js')
+    },
     modules: [
       'node_modules',
       'src'
