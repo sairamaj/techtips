@@ -5,7 +5,7 @@ src/dist/
 
 dist/
 
-src//*.js
+src/**/*.js
 
 # dependencies
 node_modules/

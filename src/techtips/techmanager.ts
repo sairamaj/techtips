@@ -9,7 +9,6 @@ export class TechManager {
 
     async getCategories(): Promise<Array<TipCategory>> {
         var data = await RedisProxy.getAsync('techdata.techtips.categories')
-        console.log('TechManager:' + data)
         return JSON.parse(data)
     }
 

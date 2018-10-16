@@ -59,7 +59,6 @@ var TechCategory = /** @class */ (function () {
                         return [4 /*yield*/, redisProxy_1.RedisProxy.getAsync(tipKey)];
                     case 2:
                         data = _b.sent();
-                        console.log('data:' + data);
                         if (data !== null) {
                             tips = YAML.parse(data);
                         }
