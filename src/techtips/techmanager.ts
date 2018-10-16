@@ -14,7 +14,7 @@ export class TechManager {
     }
 
     async getTips(name: string, filter: string): Promise<Array<Tip>> {
-        const tips = await new TechCategory(this.accessToken, name).getTips();
+        const tips = await new TechCategory(name).getTips();
         if (filter === null || filter === undefined)
             return tips;
 
