@@ -3,6 +3,7 @@ import { TechManager } from "./techmanager";
 import { TechCategory } from "./techcategory";
 var fulltextsearchlight = require('full-text-search-light');
 
+
 export class TipSearch{
     static isIndexed : boolean;
     static engine = new fulltextsearchlight({
@@ -11,23 +12,21 @@ export class TipSearch{
       });
 
     static async search(value) : Promise<Array<Tip>>{
-        throw {
-            error: "Search temporarily suspended."
+
+        if(!TipSearch.isIndexed){
+            console.log('indexing...')
+            TipSearch.index();
+            TipSearch.isIndexed = true
         }
-        // if(!TipSearch.isIndexed){
-        //     console.log('indexing...')
-        //     TipSearch.index();
-        //     TipSearch.isIndexed = true
-        // }
         
-        // return TipSearch.engine.search(value)
+        return TipSearch.engine.search(value)
     }
 
     static async index(){
-        // new TechManager("").getCategories().forEach( async(category)=>{
-        //     new TechManager("").getTips(category.name, undefined).forEach( async(tip) =>{
-        //         TipSearch.engine.add(tip);
-        //     })
-        // })
+        (await new TechManager("").getCategories()).forEach( async(category)=>{
+            (await new TechManager("").getTips(category.name, undefined)).forEach( async(tip) =>{
+                TipSearch.engine.add(tip);
+            })
+        })
     }
 }
