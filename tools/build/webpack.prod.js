@@ -9,7 +9,8 @@ module.exports = {
   target: 'node',
   entry: {
     'techtips': $.root('./src/techtips/index.ts'),
-    'techtasks': $.root('./src/techtasks/index.ts')
+    'techtasks': $.root('./src/techtasks/index.ts'),
+    'codesnippets': $.root('./src/codesnippets/index.ts')
   },
   output: {
     path: $.root('dist'),
@@ -49,11 +50,6 @@ module.exports = {
       {
         context: 'src',
         from: '**/function.json',
-        to: ''
-      },
-      {
-        context: 'src',
-        from: 'techtips/data/**/*.yaml',
         to: ''
       }
     ])
