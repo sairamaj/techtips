@@ -16,6 +16,7 @@
       "type": "Microsoft.ApiManagement/service/apis",
       "name": "[concat(parameters('ApimServiceName'), '/techtips')]",
       "properties": {
+        "displayName": "Tech Tips API",
         "path": "/techtips",
         "protocols": [
             "https"
