@@ -14,32 +14,32 @@
         "description": "The name of the API management"
       }
     },
-    "PublisherName" :{
-        "type" : "string",
-        "metadata": {
-            "description": "Name of the publisher"
-        }
+    "PublisherName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the publisher"
+      }
     },
     "PublisherEmail": {
-        "type": "string",
-        "metadata": {
-            "description" : "Email of the publisher"
-        }
+      "type": "string",
+      "metadata": {
+        "description": "Email of the publisher"
+      }
     },
-    "sku":{
-        "type" :"string",
-        "allowedValues": ["Developer","Standard","Premium"],
-        "defaultValue": "Developer",
-        "metadata": {
-            "description" :"The pricing of this API management service"
-        }
+    "sku": {
+      "type": "string",
+      "allowedValues": ["Developer", "Standard", "Premium"],
+      "defaultValue": "Developer",
+      "metadata": {
+        "description": "The pricing of this API management service"
+      }
     },
-    "skuCount":{
-        "type" : "int",
-        "defaultValue": 1,
-        "metadata": {
-            "description": "The instance size of this API management serivce."
-        }
+    "skuCount": {
+      "type": "int",
+      "defaultValue": 1,
+      "metadata": {
+        "description": "The instance size of this API management serivce."
+      }
     }
   },
   "variables": {},
@@ -60,6 +60,21 @@
           "PublisherEmail": { "value": "[parameters('PublisherEmail')]" },
           "sku": { "value": "[parameters('sku')]" },
           "skuCount": { "value": "[parameters('skuCount')]" }
+        }
+      }
+    },
+    {
+      "apiVersion": "2017-05-10",
+      "name": "apiTemplate",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(parameters('repoBaseUrl'),'/api.template.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "ApimServiceName": { "value": "[parameters('ApimServiceName')]" }
         }
       }
     }
