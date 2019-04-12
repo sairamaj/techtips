@@ -1,0 +1,67 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "repoBaseUrl": {
+      "type": "string",
+      "metadata": {
+        "description": "Base Url of the repository"
+      }
+    },
+    "ApimServiceName": {
+      "type": "string",
+      "metadata": {
+        "description": "The name of the API management"
+      }
+    },
+    "PublisherName" :{
+        "type" : "string",
+        "metadata": {
+            "description": "Name of the publisher"
+        }
+    },
+    "PublisherEmail": {
+        "type": "string",
+        "metadata": {
+            "description" : "Email of the publisher"
+        }
+    },
+    "sku":{
+        "type" :"string",
+        "allowedValues": ["Developer","Standard","Premium"],
+        "defaultValue": "Developer",
+        "metadata": {
+            "description" :"The pricing of this API management service"
+        }
+    },
+    "skuCount":{
+        "type" : "int",
+        "defaultValue": 1,
+        "metadata": {
+            "description": "The instance size of this API management serivce."
+        }
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "apiVersion": "2017-05-10",
+      "name": "serviceTemplate",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(parameters('repoBaseUrl'),'/service.template.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "ApimServiceName": { "value": "[parameters('ApimServiceName')]" },
+          "PublisherName": { "value": "[parameters('PublisherName')]" },
+          "PublisherEmail": { "value": "[parameters('PublisherEmail')]" },
+          "sku": { "value": "[parameters('sku')]" },
+          "skuCount": { "value": "[parameters('skuCount')]" }
+        }
+      }
+    }
+  ]
+}
