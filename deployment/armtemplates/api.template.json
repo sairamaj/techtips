@@ -14,7 +14,7 @@
     {
       "apiVersion": "2018-01-01",
       "type": "Microsoft.ApiManagement/service/apis",
-      "name": "[concat(parameters('ApimServiceName'), '-api')]",
+      "name": "[concat(parameters('ApimServiceName'), '/tichtips')]",
       "properties": {
         "path": "/techtips"
       }
