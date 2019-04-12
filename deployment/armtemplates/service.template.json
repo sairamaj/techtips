@@ -41,6 +41,7 @@
         "apiVersion" : "2018-01-01",
         "name" : "[parameters('ApimServiceName')]",
         "type" : "Microsoft.ApiManagement/service",
+        "location" :"[resourceGroup().location]",
         "tags": {},
         "sku":{
             "name": "[parameters('sku')]",
