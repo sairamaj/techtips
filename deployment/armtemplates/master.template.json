@@ -77,6 +77,19 @@
           "ApimServiceName": { "value": "[parameters('ApimServiceName')]" }
         }
       }
+    },
+    {
+      "apiVersion": "2018-01-01",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "name": "[concat(parameters('ApimServiceName'), '/saitech')]",
+      "properties":{
+        "displayName": "Get Tech Tips",
+        "method": "GET",
+        "urlTemplate": "/techtips"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments','apiTemplate')]"
+      ]
     }
   ]
 }

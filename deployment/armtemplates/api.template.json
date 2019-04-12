@@ -14,10 +14,10 @@
     {
       "apiVersion": "2018-01-01",
       "type": "Microsoft.ApiManagement/service/apis",
-      "name": "[concat(parameters('ApimServiceName'), '/techtips')]",
+      "name": "[concat(parameters('ApimServiceName'), '/saitech')]",
       "properties": {
         "displayName": "Tech Tips API",
-        "path": "/techtips",
+        "path": "/saitech",
         "protocols": [
             "https"
         ]        
