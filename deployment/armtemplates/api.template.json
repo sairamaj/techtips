@@ -13,6 +13,7 @@
   "resources": [
     {
       "apiVersion": "2018-01-01",
+      "contentVersion": "1.0.0.1",
       "type": "Microsoft.ApiManagement/service/apis",
       "name": "[concat(parameters('ApimServiceName'), '/saitech')]",
       "properties": {
