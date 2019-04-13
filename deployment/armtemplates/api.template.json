@@ -20,7 +20,11 @@
         "path": "/saitech",
         "protocols": [
             "https"
-        ]        
+        ],
+        "authenticationSettings":{
+          "subscriptionKeyRequired" : false
+
+        }
       }
     }
   ]
