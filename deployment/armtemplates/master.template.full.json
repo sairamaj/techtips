@@ -8,25 +8,25 @@
         "description": "Base Url of the repository"
       }
     },
-    "ApimServiceName": {
+    "apimServiceName": {
       "type": "string",
       "metadata": {
         "description": "The name of the API management"
       }
     },
-    "PublisherName": {
+    "publisherName": {
       "type": "string",
       "metadata": {
         "description": "Name of the publisher"
       }
     },
-    "PublisherEmail": {
+    "publisherEmail": {
       "type": "string",
       "metadata": {
         "description": "Email of the publisher"
       }
     },
-    "SubscriptionRequired": {
+    "subscriptionRequired": {
       "type": "bool",
       "defaultValue": false,
       "metadata": {
@@ -62,9 +62,9 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
-          "ApimServiceName": { "value": "[parameters('ApimServiceName')]" },
-          "PublisherName": { "value": "[parameters('PublisherName')]" },
-          "PublisherEmail": { "value": "[parameters('PublisherEmail')]" },
+          "ApimServiceName": { "value": "[parameters('apimServiceName')]" },
+          "PublisherName": { "value": "[parameters('publisherName')]" },
+          "PublisherEmail": { "value": "[parameters('publisherEmail')]" },
           "sku": { "value": "[parameters('sku')]" },
           "skuCount": { "value": "[parameters('skuCount')]" }
         }
@@ -79,7 +79,7 @@
         "serviceUrl": "https://saitech.azurewebsites.net/api",
         "path": "/saitech",
         "protocols": ["https"],
-        "subscriptionRequired": "[parameters('SubscriptionRequired')]"
+        "subscriptionRequired": "[parameters('subscriptionRequired')]"
       },
       "dependsOn": [
         "[resourceId('Microsoft.Resources/deployments','serviceTemplate')]"
@@ -96,7 +96,7 @@
       },
       "dependsOn": [
         "[resourceId('Microsoft.Resources/deployments','serviceTemplate')]",
-        "[resourceId('Microsoft.ApiManagement/service/apis',parameters('ApimServiceName'), 'saitech')]"
+        "[resourceId('Microsoft.ApiManagement/service/apis',parameters('apimServiceName'), 'saitech')]"
       ]
     }
   ]

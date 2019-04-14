@@ -2,33 +2,32 @@
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.1",
   "parameters": {
-    "ApimServiceName": {
+    "apimServiceName": {
       "type": "string",
       "metadata": {
         "description": "The name of the API management"
-      },
-      "SubscriptionRequired":{
-        "type" : "bool",
-        "metadata":{
-          "description": "Subscription required or not"
-        }
+      }
+    },
+    "subscriptionRequired": {
+      "type": "bool",
+      "defaultValue": false,
+      "metadata": {
+        "description": "Subscription required or not"
       }
     }
   },
 
   "resources": [
     {
-      "apiVersion": "2018-01-01",
+      "apiVersion": "2018-06-01-preview",
       "type": "Microsoft.ApiManagement/service/apis",
-      "name": "[concat(parameters('ApimServiceName'), '/saitech')]",
+      "name": "[concat(parameters('apimServiceName'), '/saitech')]",
       "properties": {
         "displayName": "Tech Tips API",
-        "path": "/saitech",
         "serviceUrl": "https://saitech.azurewebsites.net/api",
-        "protocols": [
-            "https"
-        ],
-        "subscriptionRequired": false
+        "path": "/saitech",
+        "protocols": ["https"],
+        "subscriptionRequired": "[parameters('subscriptionRequired')]"
       }
     }
   ]

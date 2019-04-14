@@ -8,22 +8,29 @@
         "description": "Base Url of the repository"
       }
     },
-    "ApimServiceName": {
+    "apimServiceName": {
       "type": "string",
       "metadata": {
         "description": "The name of the API management"
       }
     },
-    "PublisherName": {
+    "publisherName": {
       "type": "string",
       "metadata": {
         "description": "Name of the publisher"
       }
     },
-    "PublisherEmail": {
+    "publisherEmail": {
       "type": "string",
       "metadata": {
         "description": "Email of the publisher"
+      }
+    },
+    "subscriptionRequired": {
+      "type": "bool",
+      "defaultValue": false,
+      "metadata": {
+        "description": "Subscription required or not"
       }
     },
     "sku": {
@@ -55,9 +62,9 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
-          "ApimServiceName": { "value": "[parameters('ApimServiceName')]" },
-          "PublisherName": { "value": "[parameters('PublisherName')]" },
-          "PublisherEmail": { "value": "[parameters('PublisherEmail')]" },
+          "apimServiceName": { "value": "[parameters('apimServiceName')]" },
+          "publisherName": { "value": "[parameters('publisherName')]" },
+          "publisherEmail": { "value": "[parameters('publisherEmail')]" },
           "sku": { "value": "[parameters('sku')]" },
           "skuCount": { "value": "[parameters('skuCount')]" }
         }
@@ -74,7 +81,8 @@
           "contentVersion": "1.0.0.1"
         },
         "parameters": {
-          "ApimServiceName": { "value": "[parameters('ApimServiceName')]" }
+          "apimServiceName": { "value": "[parameters('apimServiceName')]" },
+          "subscriptionRequired": { "value": "[parameters('subscriptionRequired')]" }
         }
       },
       "dependsOn": [
@@ -82,13 +90,18 @@
       ]
     },
     {
-      "apiVersion": "2018-01-01",
-      "type": "Microsoft.ApiManagement/service/apis/operations",
-      "name": "[concat(parameters('ApimServiceName'), '/saitech/techtips')]",
-      "properties":{
-        "displayName": "Get Tech Tips",
-        "method": "GET",
-        "urlTemplate": "/techtips"
+      "apiVersion": "2017-05-10",
+      "name": "operationTemplate",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(parameters('repoBaseUrl'),'/operation.template.json')]",
+          "contentVersion": "1.0.0.1"
+        },
+        "parameters": {
+          "apimServiceName": { "value": "[parameters('apimServiceName')]" }
+        }
       },
       "dependsOn": [
         "[resourceId('Microsoft.Resources/deployments','apiTemplate')]"
