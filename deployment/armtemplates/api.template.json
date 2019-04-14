@@ -18,6 +18,7 @@
       "properties": {
         "displayName": "Tech Tips API",
         "path": "/saitech",
+        "serviceUrl": "https://saitech.azurewebsites.net/api",
         "protocols": [
             "https"
         ],

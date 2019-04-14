@@ -1,6 +1,6 @@
 # https://raw.githubusercontent.com/sairamaj/techtips/master/deployment/armtemplates
 <# Test the arm templates #>
-New-AzureRmResourceGroupDeployment -ResourceGroupName deleteme `
- -TemplateFile .\armtemplates\master.template.json `
+New-AzureRmResourceGroupDeployment -ResourceGroupName deletemeapim `
+ -TemplateFile .\armtemplates\master.template.full.json `
  -TemplateParameterFile .\armtemplates\master.parameters.json `
   -repoBaseUrl https://raw.githubusercontent.com/sairamaj/techtips/master/deployment/armtemplates
