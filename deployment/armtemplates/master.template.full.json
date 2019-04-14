@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.2",
+  "contentVersion": "1.0.0.3",
   "parameters": {
     "repoBaseUrl": {
       "type": "string",
@@ -24,6 +24,13 @@
       "type": "string",
       "metadata": {
         "description": "Email of the publisher"
+      }
+    },
+    "SubscriptionRequired": {
+      "type": "bool",
+      "defaultValue": false,
+      "metadata": {
+        "description": "Subscription required or not"
       }
     },
     "sku": {
@@ -64,21 +71,15 @@
       }
     },
     {
-      "apiVersion": "2018-01-01",
+      "apiVersion": "2018-06-01-preview",
       "type": "Microsoft.ApiManagement/service/apis",
       "name": "[concat(parameters('ApimServiceName'), '/saitech')]",
       "properties": {
         "displayName": "Tech Tips API",
         "serviceUrl": "https://saitech.azurewebsites.net/api",
         "path": "/saitech",
-        "protocols": [
-            "https"
-        ],
-        "authenticationSettings":{
-          "subscriptionKeyRequired" : false
-
-        }
-        
+        "protocols": ["https"],
+        "subscriptionRequired": "[parameters('SubscriptionRequired')]"
       },
       "dependsOn": [
         "[resourceId('Microsoft.Resources/deployments','serviceTemplate')]"
@@ -88,7 +89,7 @@
       "apiVersion": "2018-01-01",
       "type": "Microsoft.ApiManagement/service/apis/operations",
       "name": "[concat(parameters('ApimServiceName'), '/saitech/techtips')]",
-      "properties":{
+      "properties": {
         "displayName": "Get Tech Tips",
         "method": "GET",
         "urlTemplate": "/techtips"
@@ -96,7 +97,7 @@
       "dependsOn": [
         "[resourceId('Microsoft.Resources/deployments','serviceTemplate')]",
         "[resourceId('Microsoft.ApiManagement/service/apis',parameters('ApimServiceName'), 'saitech')]"
-        ]
+      ]
     }
   ]
 }
