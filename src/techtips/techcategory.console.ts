@@ -3,7 +3,7 @@ import { TechCategory } from './techcategory';
 class Test{
     
     test():void {
-        let category = new TechCategory('readme')
+        let category = new TechCategory(null, 'readme')
         category.getTips().then(t => {
             console.log(t)
         }).catch(err => {
