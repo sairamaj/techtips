@@ -6,7 +6,7 @@ install:
   - npm run-script build
 deploy:
   provider: azure_web_apps
-  skip_cleanup: true
+  skip_cleanup: false
   verbose: true
 git:
    depth: 9999999  
