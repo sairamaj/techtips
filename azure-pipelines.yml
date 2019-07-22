@@ -12,7 +12,7 @@ variables:
   azureSubscription: 'b4c96b58-670f-44fa-a206-ed088b8460c5'
 
   # Function app name
-  functionAppName: 'saitech2'
+  functionAppName: 'saitech'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
