@@ -10,7 +10,9 @@ module.exports = {
   entry: {
     'techtips': $.root('./src/techtips/index.ts'),
     'techtasks': $.root('./src/techtasks/index.ts'),
-    'codesnippets': $.root('./src/codesnippets/index.ts')
+    'codesnippets': $.root('./src/codesnippets/index.ts'),
+    'projects': $.root('./src/projects/index.ts')
+   
   },
   output: {
     path: $.root('dist'),
