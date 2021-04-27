@@ -40,7 +40,7 @@
     "js-base64": "2.4.9",
     "underscore": "1.9.1",
     "yamljs": "^0.3.0",
-    "redis": "2.8.0",
+    "redis": "3.1.1",
     "bluebird": "3.5.2"
   },
   "devDependencies": {
